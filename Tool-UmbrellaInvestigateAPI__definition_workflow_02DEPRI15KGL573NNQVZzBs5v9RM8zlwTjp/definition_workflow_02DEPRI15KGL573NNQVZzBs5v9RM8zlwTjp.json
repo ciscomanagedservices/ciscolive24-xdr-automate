@@ -25,15 +25,15 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "output",
-          "name": "o_message_content",
+          "scope": "input",
+          "name": "i_request_payload",
           "type": "datatype.string",
-          "description": "Response payload from Cisco Umbrella",
+          "description": "Request payload for Umbrella Investigate API",
           "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_02DEPU0OPJGAK25EehdFgTunDsURJlCzP91",
+        "unique_name": "variable_workflow_02DEQ8IQ532RJ1GwqKqBZmf1Swdc2gDT4MV",
         "object_type": "variable_workflow"
       },
       {
@@ -55,15 +55,15 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "input",
-          "name": "i_request_payload",
+          "scope": "output",
+          "name": "o_message_content",
           "type": "datatype.string",
-          "description": "Request payload for Umbrella Investigate API",
+          "description": "Response payload from Cisco Umbrella",
           "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_02DEQ8IQ532RJ1GwqKqBZmf1Swdc2gDT4MV",
+        "unique_name": "variable_workflow_02DEPU0OPJGAK25EehdFgTunDsURJlCzP91",
         "object_type": "variable_workflow"
       },
       {
@@ -73,7 +73,7 @@
           "scope": "input",
           "name": "i_relative_path",
           "type": "datatype.string",
-          "description": "Relative path to Umbrella Investigate API, suffix to the following URL https://investigate.api.umbrella.com",
+          "description": "Relative path to Umbrella Investigate API, suffix to the following URL https://investigate.api.umbrella.com, with a leading /",
           "is_required": true,
           "display_on_wizard": false,
           "is_invisible": false
