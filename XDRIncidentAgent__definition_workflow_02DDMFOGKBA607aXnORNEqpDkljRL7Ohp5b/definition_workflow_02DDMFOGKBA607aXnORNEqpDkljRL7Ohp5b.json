@@ -22,78 +22,18 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "As an IT Security Operations Engineer, you are tasked with managing security incidents in accordance with the SANS incident response methodology. It is critical to follow the protocol below to ensure a systematic and thorough approach:\n \n1. Initial Documentation: Before beginning any investigation or remedial measures, meticulously document your planned action steps in the XDR incident notes using the provided tool. This should outline your strategy and be entered into the tool provided.\n2. Investigation Protocol: Use all available tools methodically during your investigation. If an incident remains unresolved with the resources at hand, record this status update.\n3.  Endpoint Analysis and Isolation: Analyze the security health of the endpoint and DNS category type using your tools. If the type is identified as Command and Control (C2) traffic, classify it as high risk, and proceed to isolate the endpoint as a precautionary measure.\n3.  Incident Note Updates: Consistently update the XDR incident notes during pivotal stages, including:\nWhen you begin the investigation,\nAfter establishing a diagnosis,\nPrior to submitting a change approval request,\nFollowing any remediation efforts, and\nUpon discovering any significant findings.\n4.\tEvidence Documentation: Document all technical evidence from Cisco Security tools, such as API responses, within the incident updates to support your analysis and actions.\n5.\tResolution Documentation: At the resolution of an incident or after exhausting all tool capabilities, mark the end of your notes with “FINAL ANSWER:”. This notation must be transferred verbatim into the final incident report.\n6.\tConfiguration Recommendations: If the resolution is unclear, avoid guessing with configurations. Instead, offer a comprehensive, actionable recommendation for the customer.\n7.\tChange Approvals: Before implementing any changes, such as endpoint isolation, obtain the necessary approvals. Document the outcomes of these changes once you have executed them.\n8.\tCommunication Via Webex: Use Webex to inform the security team about high-risk incidents, to request escalations for further investigation, and to report any isolations that have taken place.\n9.\tDocumentation Consistency: Ensure you document the incident using the provided tool at the start of the investigation and again forming anaylsis.  Documentation of all supporting evidence MUST be in incident before requesting any change approvals.\n \nConstraints:\n* Refrain from using any tools or functions that are beyond your access permissions.\n* All tools and functions employed should comply with the naming convention regex pattern: ^[a-zA-Z0-9_-]{1,64}$.\n* In case of a 404 error from an API call, verify the API path for accuracy and attempt one retry.\n \nThis protocol is designed to maintain the integrity and consistency of the security incident management process. Adherence to these steps is essential for effective and efficient resolution of incidents.",
-          "scope": "local",
-          "name": "l_llm_system_prompt",
-          "type": "datatype.string",
-          "description": "The system prompt being sent to the LLM",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_02DDN365WU3FV3Yc6JxwZcIZl4KbhaBgaWB",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "[]",
-          "scope": "local",
-          "name": "l_messages",
-          "type": "datatype.string",
-          "description": "The messages array (Chat History)",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_02DDN3SO4WTLU3Hk3uSu1ryj31Df3gRsgy3",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.integer",
         "properties": {
-          "value": 1,
+          "value": 18,
           "scope": "local",
-          "name": "l_iteration_number",
+          "name": "l_maximum_iterations",
           "type": "datatype.integer",
-          "description": "Holds the current iteration number with LLM",
+          "description": "Defines the maximum number of iterations working with the LLM. ",
           "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_02DHXMIKCV13F7koESZt4bd9d6boS3bJZ2p",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "false",
-          "scope": "local",
-          "name": "l_loop_end",
-          "type": "datatype.string",
-          "description": "Determines if the LLM loop should be ended",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_02DDUDK7ESOXC1i9bP0muUIHoodR9lrK4DJ",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "You are assigned to the following incident:\n\n",
-          "scope": "local",
-          "name": "l_llm_user_prompt_prefix",
-          "type": "datatype.string",
-          "description": "Defines the text which will be prefixed to the incident details sent to the LLM",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_02DDPLE88WXRM1uNq3F1XjYK766ROyeJxyw",
+        "unique_name": "variable_workflow_02DHXKIMPL1EI7X5D8OjdX5MHErvtJ0YSrR",
         "object_type": "variable_workflow"
       },
       {
@@ -144,16 +84,76 @@
       {
         "schema_id": "datatype.integer",
         "properties": {
-          "value": 18,
+          "value": 1,
           "scope": "local",
-          "name": "l_maximum_iterations",
+          "name": "l_iteration_number",
           "type": "datatype.integer",
-          "description": "Defines the maximum number of iterations working with the LLM. ",
+          "description": "Holds the current iteration number with LLM",
           "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_02DHXKIMPL1EI7X5D8OjdX5MHErvtJ0YSrR",
+        "unique_name": "variable_workflow_02DHXMIKCV13F7koESZt4bd9d6boS3bJZ2p",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "As an IT Security Operations Engineer, you are tasked with managing security incidents in accordance with the SANS incident response methodology. It is critical to follow the protocol below to ensure a systematic and thorough approach:\n \n1. Initial Documentation: Before beginning any investigation or remedial measures, meticulously document your planned action steps in the XDR incident notes using the provided tool. This should outline your strategy and be entered into the tool provided.\n2. Investigation Protocol: Use all available tools methodically during your investigation. If an incident remains unresolved with the resources at hand, record this status update.\n3.  Endpoint Analysis and Isolation: Analyze the security health of the endpoint and DNS category type using your tools. If the type is identified as Command and Control (C2) traffic, classify it as high risk, and proceed to isolate the endpoint as a precautionary measure.\n3.  Incident Note Updates: Consistently update the XDR incident notes during pivotal stages, including:\nWhen you begin the investigation,\nAfter establishing a diagnosis,\nPrior to submitting a change approval request,\nFollowing any remediation efforts, and\nUpon discovering any significant findings.\n4.\tEvidence Documentation: Document all technical evidence from Cisco Security tools, such as API responses, within the incident updates to support your analysis and actions.\n5.\tResolution Documentation: At the resolution of an incident or after exhausting all tool capabilities, mark the end of your notes with “FINAL ANSWER:”. This notation must be transferred verbatim into the final incident report.\n6.\tConfiguration Recommendations: If the resolution is unclear, avoid guessing with configurations. Instead, offer a comprehensive, actionable recommendation for the customer.\n7.\tChange Approvals: Before implementing any changes, such as endpoint isolation, obtain the necessary approvals. Document the outcomes of these changes once you have executed them.\n8.\tCommunication Via Webex: Use Webex to inform the security team about high-risk incidents, to request escalations for further investigation, and to report any isolations that have taken place.\n9.\tDocumentation Consistency: Ensure you document the incident using the provided tool at the start of the investigation and again forming analysis.  Remember that DETAILED documentation of all supporting evidence of endpoints and observable analysis MUST be in incident before requesting any change approvals.\n \nConstraints:\n* Refrain from using any tools or functions that are beyond your access permissions.\n* All tools and functions employed should comply with the naming convention regex pattern: ^[a-zA-Z0-9_-]{1,64}$.\n* In case of a 404 error from an API call, verify the API path for accuracy and attempt one retry.\n \nThis protocol is designed to maintain the integrity and consistency of the security incident management process. Adherence to these steps is essential for effective and efficient resolution of incidents.",
+          "scope": "local",
+          "name": "l_llm_system_prompt",
+          "type": "datatype.string",
+          "description": "The system prompt being sent to the LLM",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_02DDN365WU3FV3Yc6JxwZcIZl4KbhaBgaWB",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "You are assigned to the following incident:\n\n",
+          "scope": "local",
+          "name": "l_llm_user_prompt_prefix",
+          "type": "datatype.string",
+          "description": "Defines the text which will be prefixed to the incident details sent to the LLM",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_02DDPLE88WXRM1uNq3F1XjYK766ROyeJxyw",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "[]",
+          "scope": "local",
+          "name": "l_messages",
+          "type": "datatype.string",
+          "description": "The messages array (Chat History)",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_02DDN3SO4WTLU3Hk3uSu1ryj31Df3gRsgy3",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "false",
+          "scope": "local",
+          "name": "l_loop_end",
+          "type": "datatype.string",
+          "description": "Determines if the LLM loop should be ended",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_02DDUDK7ESOXC1i9bP0muUIHoodR9lrK4DJ",
         "object_type": "variable_workflow"
       }
     ],
@@ -991,6 +991,20 @@
           {
             "schema_id": "datatype.string",
             "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "o_function_format",
+              "type": "datatype.string",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DDLT3T6CFVZ7F8CeMg6PFGPJvbsnQ3lyK",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
               "value": "\"CLUS\"",
               "scope": "input",
               "name": "i_categories",
@@ -1001,20 +1015,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_02DCX3X6TE2FC0CWVORoFxv6xZJd7RMOkA7",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "o_function_format",
-              "type": "datatype.string",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DDLT3T6CFVZ7F8CeMg6PFGPJvbsnQ3lyK",
             "object_type": "variable_workflow"
           }
         ],
@@ -1550,16 +1550,16 @@
           {
             "schema_id": "datatype.string",
             "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "o_chat_completion",
+              "value": "0.9",
+              "scope": "input",
+              "name": "i_temperature",
               "type": "datatype.string",
-              "description": "The chat completion object in json",
+              "description": "What sampling temperature to use between 0 and 2",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02DCPMAP4B9XD4FH9ngx5kjgjV2QG1NlpcM",
+            "unique_name": "variable_workflow_02DCPGTLVZGAS7aR4bIIOVtW8NIun8YbFmR",
             "object_type": "variable_workflow"
           },
           {
@@ -1575,81 +1575,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_02DCPFF9V1FW04KATEfsyPF6ieCB6arYreD",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.secure_string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "i_openai_api_token",
-              "type": "datatype.secure_string",
-              "description": "The api bearer token",
-              "is_required": true,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02EBOGFELFN6Y4IUaH3pwdRyaQokyBx48pA",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "[]",
-              "scope": "output",
-              "name": "o_tool_calls",
-              "type": "datatype.string",
-              "description": "The tool calls from the response message",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DEFGKNLMAM71HyjMMILdjCi0ZAd7aScKf",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "{ \"type\": \"text\" }",
-              "scope": "input",
-              "name": "i_response_format",
-              "type": "datatype.string",
-              "description": "Specifies the format the model must output. { \"type\": \"json_object\" } or { \"type\": \"text\" }",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCPLMRWZQT71EMCd4SD9wzijc97Pw3NlN",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "[\n        {\n            \"role\": \"system\",\n            \"content\": \"You are an AI assistant. Provide results in JSON format.\"\n        }\n]",
-              "scope": "input",
-              "name": "i_messages",
-              "type": "datatype.string",
-              "description": "A list of messages in conversation so far as json",
-              "is_required": true,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCPG9XUFVXL1LuTteFioSWzi1yPNRlBzp",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "0.9",
-              "scope": "input",
-              "name": "i_temperature",
-              "type": "datatype.string",
-              "description": "What sampling temperature to use between 0 and 2",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCPGTLVZGAS7aR4bIIOVtW8NIun8YbFmR",
             "object_type": "variable_workflow"
           },
           {
@@ -1670,16 +1595,31 @@
           {
             "schema_id": "datatype.string",
             "properties": {
-              "value": "",
+              "value": "[]",
               "scope": "output",
-              "name": "o_messages",
+              "name": "o_tool_calls",
               "type": "datatype.string",
-              "description": "The message history which will include the i_messages and most recent response",
+              "description": "The tool calls from the response message",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02DCPN2FUT0KQ6n4jufZaE0ssnsWAoPXR5V",
+            "unique_name": "variable_workflow_02DEFGKNLMAM71HyjMMILdjCi0ZAd7aScKf",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "o_message_content",
+              "type": "datatype.string",
+              "description": "The message content in the AI response",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DEFQ4NLZK706z1Diu44THwhJjav8caCfr",
             "object_type": "variable_workflow"
           },
           {
@@ -1694,21 +1634,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_02EBOQW9VRT3V62DGLqVA5MOU0EmGWLJQaR",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.boolean",
-            "properties": {
-              "value": true,
-              "scope": "input",
-              "name": "i_return_messages_history",
-              "type": "datatype.boolean",
-              "description": "If true, appends the messages response to i_messages for the value of o_messages",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCWAP5RWCYV3GWvXD2cTbSUsIB0Hwr6WW",
             "object_type": "variable_workflow"
           },
           {
@@ -1727,18 +1652,93 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.string",
+            "schema_id": "datatype.boolean",
             "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "o_message_content",
-              "type": "datatype.string",
-              "description": "The message content in the AI response",
+              "value": true,
+              "scope": "input",
+              "name": "i_return_messages_history",
+              "type": "datatype.boolean",
+              "description": "If true, appends the messages response to i_messages for the value of o_messages",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02DEFQ4NLZK706z1Diu44THwhJjav8caCfr",
+            "unique_name": "variable_workflow_02DCWAP5RWCYV3GWvXD2cTbSUsIB0Hwr6WW",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "i_openai_api_token",
+              "type": "datatype.secure_string",
+              "description": "The api bearer token",
+              "is_required": true,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02EBOGFELFN6Y4IUaH3pwdRyaQokyBx48pA",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "o_messages",
+              "type": "datatype.string",
+              "description": "The message history which will include the i_messages and most recent response",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPN2FUT0KQ6n4jufZaE0ssnsWAoPXR5V",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "o_chat_completion",
+              "type": "datatype.string",
+              "description": "The chat completion object in json",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPMAP4B9XD4FH9ngx5kjgjV2QG1NlpcM",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "[\n        {\n            \"role\": \"system\",\n            \"content\": \"You are an AI assistant. Provide results in JSON format.\"\n        }\n]",
+              "scope": "input",
+              "name": "i_messages",
+              "type": "datatype.string",
+              "description": "A list of messages in conversation so far as json",
+              "is_required": true,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPG9XUFVXL1LuTteFioSWzi1yPNRlBzp",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "{ \"type\": \"text\" }",
+              "scope": "input",
+              "name": "i_response_format",
+              "type": "datatype.string",
+              "description": "Specifies the format the model must output. { \"type\": \"json_object\" } or { \"type\": \"text\" }",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPLMRWZQT71EMCd4SD9wzijc97Pw3NlN",
             "object_type": "variable_workflow"
           }
         ],
@@ -1953,33 +1953,18 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.integer",
-            "properties": {
-              "value": 15,
-              "scope": "local",
-              "name": "l_poll_time",
-              "type": "datatype.integer",
-              "description": "Time in seconds to poll the API in the event that the run instance is in pending or running state",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DLGD585Z4YF5hFlOxShnB4yK0cFEYN8ac",
-            "object_type": "variable_workflow"
-          },
-          {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "output",
-              "name": "o_message_content",
+              "scope": "local",
+              "name": "l_workflow_start_response",
               "type": "datatype.string",
-              "description": "Message content from the workflow instance ",
+              "description": "Response body when starting workflow via API",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02DCZ17G5QHI44uutRtYxa5oiOQeBx9BVRD",
+            "unique_name": "variable_workflow_02DLG0R6HW25M2rr4pS9qBuNZ9dMXzwcb6Z",
             "object_type": "variable_workflow"
           },
           {
@@ -2000,16 +1985,16 @@
           {
             "schema_id": "datatype.string",
             "properties": {
-              "value": "{\"i_query\":\"example query\"}\n",
-              "scope": "input",
-              "name": "i_inputs",
+              "value": "",
+              "scope": "output",
+              "name": "o_message_content",
               "type": "datatype.string",
-              "description": "Inputs to the workflow as JSON string",
-              "is_required": true,
+              "description": "Message content from the workflow instance ",
+              "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02DDLTMMGC9GV6vAV5A2jLq5jWLJUQ57wh1",
+            "unique_name": "variable_workflow_02DCZ17G5QHI44uutRtYxa5oiOQeBx9BVRD",
             "object_type": "variable_workflow"
           },
           {
@@ -2027,18 +2012,18 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.string",
+            "schema_id": "datatype.integer",
             "properties": {
-              "value": "",
+              "value": 15,
               "scope": "local",
-              "name": "l_workflow_start_response",
-              "type": "datatype.string",
-              "description": "Response body when starting workflow via API",
+              "name": "l_poll_time",
+              "type": "datatype.integer",
+              "description": "Time in seconds to poll the API in the event that the run instance is in pending or running state",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02DLG0R6HW25M2rr4pS9qBuNZ9dMXzwcb6Z",
+            "unique_name": "variable_workflow_02DLGD585Z4YF5hFlOxShnB4yK0cFEYN8ac",
             "object_type": "variable_workflow"
           },
           {
@@ -2054,6 +2039,21 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_02DLG1YUV2EE84y7wAM2lcbRUL9VIZPPrA6",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "{\"i_query\":\"example query\"}\n",
+              "scope": "input",
+              "name": "i_inputs",
+              "type": "datatype.string",
+              "description": "Inputs to the workflow as JSON string",
+              "is_required": true,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DDLTMMGC9GV6vAV5A2jLq5jWLJUQ57wh1",
             "object_type": "variable_workflow"
           }
         ],
