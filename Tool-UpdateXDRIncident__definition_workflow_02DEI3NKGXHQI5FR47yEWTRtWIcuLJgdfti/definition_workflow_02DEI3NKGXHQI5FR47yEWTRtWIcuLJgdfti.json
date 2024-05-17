@@ -10,15 +10,15 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "output",
-          "name": "o_message_content",
+          "scope": "input",
+          "name": "i_incident_id",
           "type": "datatype.string",
-          "description": "Response from XDR to adding a note to an incident, 'true' indicates success, 'false' indicates failure",
-          "is_required": false,
+          "description": "Incident reference in XDR",
+          "is_required": true,
           "display_on_wizard": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_02DEI64PZ0SZY6dL8B2pKFt4FNBsN1qEzay",
+        "unique_name": "variable_workflow_02DEI5GAM73MM0BIVu1tbF0LFbYPXoAF749",
         "object_type": "variable_workflow"
       },
       {
@@ -28,7 +28,7 @@
           "scope": "input",
           "name": "i_note_content",
           "type": "datatype.string",
-          "description": "Note content to add to the XDR incident worklog. \nNote should be in markdown format. Recommend to use the following format:\n### Incident Update - \u003cstate\u003e ### \n### Executive Summary: ### \n\u003cParagraph of high level summary of issue \u003e\n\n### Investigation Details: ### \n\u003cdetails of analysis in bullet points and/or preformatted text blocks\u003e\n\n### Supporting Evidence: ### \n\u003cOptional but recommended - include logs or api outputs in readable format\u003e\n\n### Next Steps: ### \n\u003cnext steps as bulleted or numbered list\u003e",
+          "description": "Note to add to the XDR incident worklog. \nNote should be in markdown format. Recommend to use the following format:\n### Incident Update - \u003cstate\u003e ### \n### Executive Summary: ### \n\u003cParagraph of high level summary of issue \u003e\n\n### Investigation Details: ### \n\u003cdetails of analysis in bullet points and/or preformatted text blocks\u003e\n\n### Supporting Evidence: ### \n\u003cOptional but recommended - include logs or api outputs in readable format\u003e\n\n### Next Steps: ### \n\u003cnext steps as bulleted or numbered list\u003e",
           "is_required": true,
           "display_on_wizard": false,
           "is_invisible": false
@@ -40,15 +40,15 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "input",
-          "name": "i_incident_id",
+          "scope": "output",
+          "name": "o_message_content",
           "type": "datatype.string",
-          "description": "Incident reference in XDR",
-          "is_required": true,
+          "description": "Response from XDR to adding a note to an incident, 'true' indicates success, 'false' indicates failure",
+          "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_02DEI5GAM73MM0BIVu1tbF0LFbYPXoAF749",
+        "unique_name": "variable_workflow_02DEI64PZ0SZY6dL8B2pKFt4FNBsN1qEzay",
         "object_type": "variable_workflow"
       }
     ],
@@ -57,7 +57,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "description": "This workflow adds a note to an XDR incident.",
+      "description": "This workflow adds a note to an XDR incident worklog.",
       "display_name": "Tool - Update XDR Incident",
       "runtime_user": {
         "target_default": true
