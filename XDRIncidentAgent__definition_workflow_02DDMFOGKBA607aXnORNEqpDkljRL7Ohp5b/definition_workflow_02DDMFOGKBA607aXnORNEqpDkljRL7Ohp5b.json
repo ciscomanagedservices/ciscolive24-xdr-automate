@@ -22,18 +22,33 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "datatype.boolean",
         "properties": {
-          "value": "\"XDR_AI_Agent_Tool\"",
+          "value": true,
           "scope": "input",
-          "name": "i_tool_workflow_category",
-          "type": "datatype.string",
-          "description": "The comma separated list of categories in XDR Automate which will be used to select the list of 'tools' for the AI agent",
+          "name": "i_triggered_from_automation_rule",
+          "type": "datatype.boolean",
+          "description": "Set to True in automation rule so that the incident data is pulled from trigger output",
           "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_02DDMXNX1BFIS5WVPGYqYAJ2X9kwztQpeK7",
+        "unique_name": "variable_workflow_02DHVQMMDQYH24Gli7TYWhyKOE6z6COWAzb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "You are assigned to the following incident:\n\n",
+          "scope": "local",
+          "name": "l_llm_user_prompt_prefix",
+          "type": "datatype.string",
+          "description": "Defines the text which will be prefixed to the incident details sent to the LLM",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_02DDPLE88WXRM1uNq3F1XjYK766ROyeJxyw",
         "object_type": "variable_workflow"
       },
       {
@@ -49,51 +64,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_02DHXKIMPL1EI7X5D8OjdX5MHErvtJ0YSrR",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 1,
-          "scope": "local",
-          "name": "l_iteration_number",
-          "type": "datatype.integer",
-          "description": "Holds the current iteration number with LLM",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_02DHXMIKCV13F7koESZt4bd9d6boS3bJZ2p",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "incident-c4530825-ddc0-425c-ad9b-c9d5af14f1ba",
-          "scope": "input",
-          "name": "i_xdr_incident_id",
-          "type": "datatype.string",
-          "description": "ID of XDR incident.  The value of this ID will be overwritten from the incident automation rule if i_triggered_by_automation_rule = True",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_02DHVN71MUDRB22KLRFTqGguYKuZtiqXbEf",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "o_final_answer",
-          "type": "datatype.string",
-          "description": "The final answer from the LLM after working through the incident with its available tools",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_02DDN4LU6AG5U2vxdBD2YcHqs5bOvD6N859",
         "object_type": "variable_workflow"
       },
       {
@@ -114,31 +84,46 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "You are assigned to the following incident:\n\n",
-          "scope": "local",
-          "name": "l_llm_user_prompt_prefix",
+          "value": "\"XDR_AI_Agent_Tool\"",
+          "scope": "input",
+          "name": "i_tool_workflow_category",
           "type": "datatype.string",
-          "description": "Defines the text which will be prefixed to the incident details sent to the LLM",
+          "description": "The comma separated list of categories in XDR Automate which will be used to select the list of 'tools' for the AI agent",
           "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_02DDPLE88WXRM1uNq3F1XjYK766ROyeJxyw",
+        "unique_name": "variable_workflow_02DDMXNX1BFIS5WVPGYqYAJ2X9kwztQpeK7",
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.boolean",
+        "schema_id": "datatype.string",
         "properties": {
-          "value": true,
+          "value": "incident-c4530825-ddc0-425c-ad9b-c9d5af14f1ba",
           "scope": "input",
-          "name": "i_triggered_from_automation_rule",
-          "type": "datatype.boolean",
-          "description": "Set to True in automation rule so that the incident data is pulled from trigger output",
+          "name": "i_xdr_incident_id",
+          "type": "datatype.string",
+          "description": "ID of XDR incident.  The value of this ID will be overwritten from the incident automation rule if i_triggered_by_automation_rule = True",
           "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_02DHVQMMDQYH24Gli7TYWhyKOE6z6COWAzb",
+        "unique_name": "variable_workflow_02DHVN71MUDRB22KLRFTqGguYKuZtiqXbEf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "local",
+          "name": "l_iteration_number",
+          "type": "datatype.integer",
+          "description": "Holds the current iteration number with LLM",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_02DHXMIKCV13F7koESZt4bd9d6boS3bJZ2p",
         "object_type": "variable_workflow"
       },
       {
@@ -154,6 +139,21 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_02DDUDK7ESOXC1i9bP0muUIHoodR9lrK4DJ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "o_final_answer",
+          "type": "datatype.string",
+          "description": "The final answer from the LLM after working through the incident with its available tools",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_02DDN4LU6AG5U2vxdBD2YcHqs5bOvD6N859",
         "object_type": "variable_workflow"
       }
     ],
@@ -1320,20 +1320,6 @@
           {
             "schema_id": "datatype.string",
             "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "o_function_format",
-              "type": "datatype.string",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DDLT3T6CFVZ7F8CeMg6PFGPJvbsnQ3lyK",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
               "value": "\"CLUS\"",
               "scope": "input",
               "name": "i_categories",
@@ -1344,6 +1330,20 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_02DCX3X6TE2FC0CWVORoFxv6xZJd7RMOkA7",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "o_function_format",
+              "type": "datatype.string",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DDLT3T6CFVZ7F8CeMg6PFGPJvbsnQ3lyK",
             "object_type": "variable_workflow"
           }
         ],
@@ -1879,16 +1879,16 @@
           {
             "schema_id": "datatype.integer",
             "properties": {
-              "value": 30,
+              "value": 1,
               "scope": "local",
-              "name": "l_seconds_between_retries",
+              "name": "l_openai_retries",
               "type": "datatype.integer",
-              "description": "Maximum number of seconds between retry attempts. ",
+              "description": "Determines the number of retry attempts made to OpenAI",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02EK4JM1T6LQ11pN82CxaX1RDHOkegZzhyh",
+            "unique_name": "variable_workflow_02EK4JATH9EHF2PSKigI7bWK66u6IYft759",
             "object_type": "variable_workflow"
           },
           {
@@ -1909,150 +1909,16 @@
           {
             "schema_id": "datatype.string",
             "properties": {
-              "value": "{ \"type\": \"text\" }",
-              "scope": "input",
-              "name": "i_response_format",
-              "type": "datatype.string",
-              "description": "Specifies the format the model must output. { \"type\": \"json_object\" } or { \"type\": \"text\" }",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCPLMRWZQT71EMCd4SD9wzijc97Pw3NlN",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
               "value": "",
               "scope": "output",
-              "name": "o_choices",
+              "name": "o_messages",
               "type": "datatype.string",
-              "description": "The choices list from the chat completion object",
+              "description": "The message history which will include the i_messages and most recent response",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02DCPMJFLMUOH6MSDxfYhwS5m2mMBIjsGCb",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "CX OpenAI",
-              "scope": "input",
-              "name": "i_openai_http_target_name",
-              "type": "datatype.string",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02EBOQW9VRT3V62DGLqVA5MOU0EmGWLJQaR",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "o_message_content",
-              "type": "datatype.string",
-              "description": "The message content in the AI response",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DEFQ4NLZK706z1Diu44THwhJjav8caCfr",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.integer",
-            "properties": {
-              "value": 1,
-              "scope": "local",
-              "name": "l_openai_retries",
-              "type": "datatype.integer",
-              "description": "Determines the number of retry attempts made to OpenAI",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02EK4JATH9EHF2PSKigI7bWK66u6IYft759",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "0.9",
-              "scope": "input",
-              "name": "i_temperature",
-              "type": "datatype.string",
-              "description": "What sampling temperature to use between 0 and 2",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCPGTLVZGAS7aR4bIIOVtW8NIun8YbFmR",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "[\n        {\n            \"role\": \"system\",\n            \"content\": \"You are an AI assistant. Provide results in JSON format.\"\n        }\n]",
-              "scope": "input",
-              "name": "i_messages",
-              "type": "datatype.string",
-              "description": "A list of messages in conversation so far as json",
-              "is_required": true,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCPG9XUFVXL1LuTteFioSWzi1yPNRlBzp",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "[]",
-              "scope": "input",
-              "name": "i_tools",
-              "type": "datatype.string",
-              "description": "A list of tools the model may call in JSON. Max of 128 tools",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCPKDU1XY3B2TGa0NL8Pv0Q5A8tkVXdKF",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "o_chat_completion",
-              "type": "datatype.string",
-              "description": "The chat completion object in json",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCPMAP4B9XD4FH9ngx5kjgjV2QG1NlpcM",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "gpt-4-turbo",
-              "scope": "input",
-              "name": "i_model",
-              "type": "datatype.string",
-              "description": "LLM Model to be used",
-              "is_required": false,
-              "display_on_wizard": true,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCPFF9V1FW04KATEfsyPF6ieCB6arYreD",
+            "unique_name": "variable_workflow_02DCPN2FUT0KQ6n4jufZaE0ssnsWAoPXR5V",
             "object_type": "variable_workflow"
           },
           {
@@ -2088,16 +1954,150 @@
           {
             "schema_id": "datatype.string",
             "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "o_messages",
+              "value": "[\n        {\n            \"role\": \"system\",\n            \"content\": \"You are an AI assistant. Provide results in JSON format.\"\n        }\n]",
+              "scope": "input",
+              "name": "i_messages",
               "type": "datatype.string",
-              "description": "The message history which will include the i_messages and most recent response",
+              "description": "A list of messages in conversation so far as json",
+              "is_required": true,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPG9XUFVXL1LuTteFioSWzi1yPNRlBzp",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": 30,
+              "scope": "local",
+              "name": "l_seconds_between_retries",
+              "type": "datatype.integer",
+              "description": "Maximum number of seconds between retry attempts. ",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02DCPN2FUT0KQ6n4jufZaE0ssnsWAoPXR5V",
+            "unique_name": "variable_workflow_02EK4JM1T6LQ11pN82CxaX1RDHOkegZzhyh",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "gpt-4-turbo",
+              "scope": "input",
+              "name": "i_model",
+              "type": "datatype.string",
+              "description": "LLM Model to be used",
+              "is_required": false,
+              "display_on_wizard": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPFF9V1FW04KATEfsyPF6ieCB6arYreD",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "o_choices",
+              "type": "datatype.string",
+              "description": "The choices list from the chat completion object",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPMJFLMUOH6MSDxfYhwS5m2mMBIjsGCb",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "o_message_content",
+              "type": "datatype.string",
+              "description": "The message content in the AI response",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DEFQ4NLZK706z1Diu44THwhJjav8caCfr",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "0.9",
+              "scope": "input",
+              "name": "i_temperature",
+              "type": "datatype.string",
+              "description": "What sampling temperature to use between 0 and 2",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPGTLVZGAS7aR4bIIOVtW8NIun8YbFmR",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "CX OpenAI",
+              "scope": "input",
+              "name": "i_openai_http_target_name",
+              "type": "datatype.string",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02EBOQW9VRT3V62DGLqVA5MOU0EmGWLJQaR",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "{ \"type\": \"text\" }",
+              "scope": "input",
+              "name": "i_response_format",
+              "type": "datatype.string",
+              "description": "Specifies the format the model must output. { \"type\": \"json_object\" } or { \"type\": \"text\" }",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPLMRWZQT71EMCd4SD9wzijc97Pw3NlN",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "o_chat_completion",
+              "type": "datatype.string",
+              "description": "The chat completion object in json",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPMAP4B9XD4FH9ngx5kjgjV2QG1NlpcM",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "[]",
+              "scope": "input",
+              "name": "i_tools",
+              "type": "datatype.string",
+              "description": "A list of tools the model may call in JSON. Max of 128 tools",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCPKDU1XY3B2TGa0NL8Pv0Q5A8tkVXdKF",
             "object_type": "variable_workflow"
           }
         ],
@@ -2200,7 +2200,7 @@
                       "body": "$activity.definition_activity_02DCVSTR1ZEIQ2Uqo6eOKKodTJi4eaQJG5h.output.script_queries.json_body$",
                       "content_type": "application/json",
                       "continue_on_error_status_code": false,
-                      "continue_on_failure": false,
+                      "continue_on_failure": true,
                       "custom_headers": [
                         {
                           "name": "Authorization",
@@ -2475,18 +2475,92 @@
         "base_type": "workflow",
         "variables": [
           {
-            "schema_id": "datatype.string",
+            "schema_id": "datatype.secure_string",
             "properties": {
               "value": "",
-              "scope": "output",
-              "name": "o_message_content",
-              "type": "datatype.string",
-              "description": "Message content from the workflow instance ",
+              "scope": "local",
+              "name": "l_access_token",
+              "type": "datatype.secure_string",
+              "description": "Access token for API access. Not used as Automation APIs target should be used",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02DCZ17G5QHI44uutRtYxa5oiOQeBx9BVRD",
+            "unique_name": "variable_workflow_02DCYW5KXRFCM0dgeWXbI9ICm2U9PFh4haF",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": 15,
+              "scope": "local",
+              "name": "l_poll_time",
+              "type": "datatype.integer",
+              "description": "Time in seconds to poll the API in the event that the run instance is in pending or running state",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DLGD585Z4YF5hFlOxShnB4yK0cFEYN8ac",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "true",
+              "scope": "local",
+              "name": "l_run_loop",
+              "type": "datatype.string",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DIW5OT2PEXT04a4sEtJhsewecDoGzJec1",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "o_instance_id",
+              "type": "datatype.string",
+              "description": "Instance id of the executed workflow",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DCZ1BVXK7X93hACqQPMnnf4CHuqVyIPEL",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "02DDM3I7Z4RAS7ZftF69Gj3ucUTorRXXKmR",
+              "scope": "input",
+              "name": "i_wf_id",
+              "type": "datatype.string",
+              "description": "ID of workflow to start",
+              "is_required": true,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DDLT1TG2MM8658HoJjmqvbxyKyHAZiKlt",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "l_workflow_start_response",
+              "type": "datatype.string",
+              "description": "Response body when starting workflow via API",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_02DLG0R6HW25M2rr4pS9qBuNZ9dMXzwcb6Z",
             "object_type": "variable_workflow"
           },
           {
@@ -2502,21 +2576,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_02DLG1YUV2EE84y7wAM2lcbRUL9VIZPPrA6",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.secure_string",
-            "properties": {
-              "value": "",
-              "scope": "local",
-              "name": "l_access_token",
-              "type": "datatype.secure_string",
-              "description": "Access token for API access. Not used as Automation APIs target should be used",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DCYW5KXRFCM0dgeWXbI9ICm2U9PFh4haF",
             "object_type": "variable_workflow"
           },
           {
@@ -2539,73 +2598,14 @@
             "properties": {
               "value": "",
               "scope": "output",
-              "name": "o_instance_id",
+              "name": "o_message_content",
               "type": "datatype.string",
-              "description": "Instance id of the executed workflow",
+              "description": "Message content from the workflow instance ",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_02DCZ1BVXK7X93hACqQPMnnf4CHuqVyIPEL",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "local",
-              "name": "l_workflow_start_response",
-              "type": "datatype.string",
-              "description": "Response body when starting workflow via API",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DLG0R6HW25M2rr4pS9qBuNZ9dMXzwcb6Z",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "02DDM3I7Z4RAS7ZftF69Gj3ucUTorRXXKmR",
-              "scope": "input",
-              "name": "i_wf_id",
-              "type": "datatype.string",
-              "description": "ID of workflow to start",
-              "is_required": true,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DDLT1TG2MM8658HoJjmqvbxyKyHAZiKlt",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "true",
-              "scope": "local",
-              "name": "l_run_loop",
-              "type": "datatype.string",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DIW5OT2PEXT04a4sEtJhsewecDoGzJec1",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.integer",
-            "properties": {
-              "value": 15,
-              "scope": "local",
-              "name": "l_poll_time",
-              "type": "datatype.integer",
-              "description": "Time in seconds to poll the API in the event that the run instance is in pending or running state",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_02DLGD585Z4YF5hFlOxShnB4yK0cFEYN8ac",
+            "unique_name": "variable_workflow_02DCZ17G5QHI44uutRtYxa5oiOQeBx9BVRD",
             "object_type": "variable_workflow"
           }
         ],
