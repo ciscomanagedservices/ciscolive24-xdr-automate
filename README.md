@@ -1,6 +1,6 @@
 ## BRKATO-1557: Automating Detection & Response Outcomes using Cisco XDR and Generative AI
 
-[About Cisco Live](https://www.ciscolive.com/global.html) | [**Link to Session Presentation**]() | [**Link to Session Recording**]([https://www.ciscolive.com](https://www.ciscolive.com/on-demand/on-demand-library.html?search=BRKATO-1557#/)) 
+[About Cisco Live](https://www.ciscolive.com/global.html) | [**Link to Session Presentation**](/BRKATO-1557.pdf) | [**Link to Session Recording**](https://www.ciscolive.com/on-demand/on-demand-library.html?search=BRKATO-1557#/)
 
 
 ### Session Demo Objective
@@ -47,7 +47,7 @@ graph TD
 #### In this repository, you'll find the following workflows:
 
 1. [XDR Incident Agent](/XDRIncidentAgent__definition_workflow_02DDMFOGKBA607aXnORNEqpDkljRL7Ohp5b/): Parent workflow that brings it all together. This workflow _accepts_ XDR Incidents and works with the tools at it's disposal in an attempt to diagnose, investigate and remediate the incident. 
-    1. Subworkflow: **Convert Workflows to OpenAI Tools**: This workflow _automagically_ converts your XDR Automate workflows into 'tools' that the XDR Incident Agent can use.
+    1. **[Subworkflow]** Convert Workflows to OpenAI Tools: This workflow _automagically_ converts your XDR Automate workflows into 'tools' that the XDR Incident Agent can use.
 3. Tool Workflows (we provide the following as examples):
     1. [Tool - Request Change Approval](/Tool-RequestChangeApproval__definition_workflow_02DIUZE85QAXE1Xes1tBKwjNjfz1ewzyOwN/): creates an approval task in XDR for human intervention.
     2. [Tool - Secure Endpoint API](/Tool-SecureEndpointAPI__definition_workflow_02DERU2M6K93C00tAcfL9vATtUNqezRLtQK/): a _web service client_ to interact with the Secure Endpoint API.
